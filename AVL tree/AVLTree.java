@@ -16,6 +16,7 @@ public class AVLTree {
     //to get the leftmost leaf
     private Node mostLeftChild(Node node) {
         Node current = node;
+        //to find the left most leaf
         while (current.left != null) {
             current = current.left;
         }
@@ -97,6 +98,7 @@ public class AVLTree {
         } else if (node.key < key) {
             node.right = insert(node.right, key);
         } else {
+            //if it exists
             throw new RuntimeException("Duplicate key !!!");
         }
         return rebalance(node);
@@ -111,6 +113,7 @@ public class AVLTree {
         } else if (node.key < key) {
             node.right = delete(node.right, key);
         } else {
+            //if the key is equal to node's key
             if (node.left == null || node.right == null) {
                 node = (node.left == null) ? node.right : node.left;
             } else {
@@ -137,7 +140,7 @@ public class AVLTree {
         return current;
     }
 
-    //part 2
+    //pre-order traversal
     public void preOrder(Node node) {
         if (node != null) {
             System.out.print(node.key + " ");
@@ -146,6 +149,7 @@ public class AVLTree {
         }
     }
 
+    //in-order traversal
     public void inOrder(Node node) {
         if (node != null) {
             inOrder(node.left);
@@ -154,6 +158,7 @@ public class AVLTree {
         }
     }
 
+    //post-order traversal
     public void postOrder(Node node) {
         if (node != null) {
             postOrder(node.left);
@@ -164,7 +169,7 @@ public class AVLTree {
 
     public static void main(String[] args) {
 
-        //task 1 part1
+        //create a AVLtree
         AVLTree tree = new AVLTree();
 
         tree.root = tree.insert(tree.root, 10);
@@ -174,7 +179,6 @@ public class AVLTree {
         tree.root = tree.insert(tree.root, 50);
         tree.root = tree.insert(tree.root, 25);
 
-        //task 1 part2
         System.out.println("pre-order traversal is : ");
         tree.preOrder(tree.root);
 
