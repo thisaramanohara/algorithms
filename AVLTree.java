@@ -8,7 +8,6 @@ public class AVLTree {
 
         Node(int key) {
             this.key = key;
-            this.height = 1;
         }
     }
 
@@ -170,10 +169,10 @@ public class AVLTree {
 
         tree.root = tree.insert(tree.root, 10);
         tree.root = tree.insert(tree.root, 20);
-//        tree.root = tree.insert(tree.root, 30);
-//        tree.root = tree.insert(tree.root, 40);
-//        tree.root = tree.insert(tree.root, 50);
-//        tree.root = tree.insert(tree.root, 25);
+        tree.root = tree.insert(tree.root, 30);
+        tree.root = tree.insert(tree.root, 40);
+        tree.root = tree.insert(tree.root, 50);
+        tree.root = tree.insert(tree.root, 25);
 
         //task 1 part2
         System.out.println("pre-order traversal is : ");
