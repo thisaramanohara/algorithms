@@ -1,6 +1,4 @@
 
-//  E/17/206
-
 import java.util.Base64;
 import java.util.LinkedList;
 
